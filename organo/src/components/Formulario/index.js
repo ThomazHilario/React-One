@@ -18,9 +18,16 @@ export const Form = () => {
         'Desing'
     ]
 
+    function handleSubmit(e){
+        // Evitando o formulario atualizar a pagina
+        e.preventDefault()
+
+        console.log(e.currentTarget)
+    }
+
     return(
         <section className="section__formulario">
-            <form>
+            <form onSubmit={handleSubmit}>
                 <h2>Preencha os dados para criar um colaborador:</h2>
                 <InputForm nameLabel={'Nome'} textPlaceholder={'Digite o seu nome...'}/>
                 <InputForm nameLabel={'Cargo'} textPlaceholder={'Digite o seu cargo...'}/>

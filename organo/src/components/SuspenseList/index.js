@@ -5,7 +5,7 @@ export const SuspenseList = ({nameLabel, itens}) => {
         <div className="container__select">
             <label>{nameLabel}</label>
 
-            <select>
+            <select required>
                 {itens.map((item,idx) => <option key={idx}>{item}</option>)}
             </select>
         </div>
