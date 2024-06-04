@@ -9,7 +9,7 @@ import { Button } from '../Button'
 
 import './formulario.css'
 
-export const Form = () => {
+export const Form = ({setColaboradores, times}) => {
 
     // states
     const [name, setName] = useState('')
@@ -17,20 +17,17 @@ export const Form = () => {
     const [imagem, setImagem] = useState('')
     const [team, setTeam] = useState('Programação')
 
-    const times = [
-        'Programação',
-        'Front-End',
-        'Back-End',
-        'DevOps',
-        'Inovaçao e Gestão',
-        'Desing'
-    ]
 
     function handleSubmit(e){
         // Evitando o formulario atualizar a pagina
         e.preventDefault()
 
-        console.log(`${name}\n${cargo}\n${imagem}\n${team}`)
+        setColaboradores({
+            nome:name,
+            cargo:cargo,
+            imagem:imagem,
+            team:team
+        })
     }
 
     return(
