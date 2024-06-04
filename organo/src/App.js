@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Banner } from './components/Banner';
 import { Form } from './components/Formulario';
+import { ShowCollaborators } from './components/ShowCollaborators';
 
 function App() {
   // state - colaboradores
@@ -27,6 +28,7 @@ function App() {
     <div className="App">
       <Banner/>
       <Form setColaboradores={newColaborador} times={times}/>
+      <ShowCollaborators times={times} colaboradores={colaboradores}/>
     </div>
   );
 }
