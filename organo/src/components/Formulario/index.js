@@ -28,6 +28,11 @@ export const Form = ({setColaboradores, times}) => {
             imagem:imagem,
             team:team
         })
+
+        // Limpando states
+        setName('')
+        setCargo('')
+        setImagem('')
     }
 
     return(
