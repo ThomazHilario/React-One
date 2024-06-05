@@ -13,8 +13,8 @@ function App() {
     'Front-End',
     'Back-End',
     'DevOps',
-    'Inovaçao e Gestão',
-    'Desing'
+    'Desing',
+    'Inovaçao e Gestão'
   ]
 
   // Criando um novo colaborador
