@@ -22,17 +22,19 @@ export const Form = ({setColaboradores, times}) => {
         // Evitando o formulario atualizar a pagina
         e.preventDefault()
 
-        setColaboradores({
-            nome:name,
-            cargo:cargo,
-            imagem:imagem,
-            team:team
-        })
-
-        // Limpando states
-        setName('')
-        setCargo('')
-        setImagem('')
+        if(name !== '' && cargo !== '' && imagem !== ''){
+            setColaboradores({
+                nome:name,
+                cargo:cargo,
+                imagem:imagem,
+                team:team
+            })
+    
+            // Limpando states
+            setName('')
+            setCargo('')
+            setImagem('')
+        }
     }
 
     return(
