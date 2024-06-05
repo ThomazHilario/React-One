@@ -1,0 +1,30 @@
+.footer__organo{
+    background-color: #6278F7;
+    height: 150px;
+    background-image: url("../../assets/fundo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.links__sociais{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.links__sociais > a > img{
+    height: 20px;
+}
+
+.footer__organo > img{
+    height: 50px;
+}
+
+.footer__organo > p{
+    color: white;
+    font-size: 16px;
+}
