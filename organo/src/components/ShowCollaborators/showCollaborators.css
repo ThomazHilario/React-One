@@ -29,7 +29,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    gap: 20px;
     width: 100%;
     height: 438px;
 }
@@ -56,6 +56,11 @@
     flex-direction: column;
     align-items: center;
     gap: 8px;
+}
+
+.introducao > h1{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
 }
 
 .card{
@@ -114,7 +119,7 @@
 }
 
 
-.Programação > .container__card > .introducao >  hr{
+.Programação > .introducao >  hr{
    border: 2px solid #57C278;
    border-radius: 5px;
    width: 32px;
@@ -128,7 +133,7 @@
     background-color: #E8F8FF;
 }
 
-.Front-End > .container__card > .introducao >  hr{
+.Front-End > .introducao >  hr{
     border: 2px solid #82CFFA;
     border-radius: 5px;
     width: 32px;
@@ -142,7 +147,7 @@
     background-color: #F0F8E2;
 }
 
-.Back-End > .container__card > .introducao >  hr{
+.Back-End > .introducao >  hr{
     border: 2px solid #A6D157;
     border-radius: 5px;
     width: 32px; 
@@ -156,7 +161,7 @@
     background-color: #FDE7E8;
 }
 
-.DevOps > .container__card > .introducao >  hr{
+.DevOps > .introducao >  hr{
     border:2px solid #E06B69;
     border-radius: 5px;
     width: 32px;
@@ -170,7 +175,7 @@
     background-color: #FFEEDF;
 }
 
-.Inovação > .container__card > .introducao >  hr{
+.Inovação > .introducao >  hr{
     border:2px solid #FF8A29;
     border-radius: 5px;
     width: 32px; 
@@ -184,7 +189,7 @@
     background-color: #FAE9F5;
 }
 
-.Desing > .container__card > .introducao >  hr{
+.Desing > .introducao >  hr{
     border:2px solid #DB6EBF;
     border-radius: 5px;
     width: 32px;
