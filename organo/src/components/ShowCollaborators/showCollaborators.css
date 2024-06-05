@@ -26,9 +26,16 @@
 }
 
 .container__card{
+    width: 100%;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 30px;
+    overflow-y: scroll;
+}
+
+.container__card::-webkit-scrollbar{
+    display: none;
 }
 
 .introducao{
@@ -72,6 +79,10 @@
     transform: translateX(-50%);
 }
 
+.bottom__card{
+    background-color: white;
+}
+
 .bottom__card > h2{
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
@@ -100,10 +111,6 @@
     background-color:#57C278 ;
 }
 
-.Programação > .container__card > .card > .bottom__card{
-    background-color:white ;
-}
-
 .Front-End{
     background-color: #E8F8FF;
 }
@@ -112,6 +119,10 @@
     border: 2px solid #82CFFA;
     border-radius: 5px;
     width: 32px;
+}
+
+.Front-End > .container__card > .card > .top__card{
+    background-color:#82CFFA ;
 }
 
 .Back-End{
@@ -124,6 +135,10 @@
     width: 32px; 
 }
 
+.Back-End > .container__card > .card > .top__card{
+    background-color: #A6D157;
+}
+
 .DevOps{
     background-color: #FDE7E8;
 }
@@ -132,6 +147,10 @@
     border:2px solid #E06B69;
     border-radius: 5px;
     width: 32px;
+}
+
+.DevOps > .container__card > .card > .top__card{
+    background-color: #E06B69;
 }
 
 .Inovação{
@@ -144,6 +163,10 @@
     width: 32px; 
 }
 
+.Inovação > .container__card > .card > .top__card{
+    background-color: #FF8A29;
+}
+
 .Desing{
     background-color: #FAE9F5;
 }
@@ -152,4 +175,8 @@
     border:2px solid #DB6EBF;
     border-radius: 5px;
     width: 32px;
+}
+
+.Desing > .container__card > .card > .top__card{
+    background-color: #DB6EBF;
 }
