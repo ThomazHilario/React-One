@@ -4,12 +4,25 @@
     align-items: center;
 }
 
-.container__colaboradores > h1{
-    padding: 50px 0px;
+.container__colaboradores > .section__introducao{
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.container__colaboradores > .section__introducao > h1{
     font-size: 40px;
     font-family: prata;
     font-weight: 400;
     color: #6278F7;
+}
+
+.container__colaboradores > .section__introducao > hr{
+    width: 32px;
+    border: 2px solid #6278F7;
+    border-radius: 5px;
 }
 
 .container__team{

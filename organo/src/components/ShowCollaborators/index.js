@@ -10,8 +10,10 @@ export const ShowCollaborators = ({times, colaboradores}) => {
     if(collaboratornNotIsEmpty){
         return(
             <section className='container__colaboradores'>
-                <h1>Minha Organização:</h1>
-                <hr/>
+                <div className='section__introducao'>
+                    <h1>Minha Organização:</h1>
+                    <hr/>
+                </div>
     
                 {times.map((time, index) => <ContainerTeam key={index} title={time} team={colaboradores.filter(colaborador => colaborador.team === time)}/>)}
             </section>
