@@ -114,87 +114,8 @@
     font-family: "Montserrat", sans-serif;;
 }
 
-.Programação{
-    background-color: #D9F7E9;
-}
-
-
-.Programação > .introducao >  hr{
-   border: 2px solid #57C278;
+.introducao >  hr{
+   border: 2px solid;
    border-radius: 5px;
    width: 32px;
-}
-
-.Programação > .container__card > .card > .top__card{
-    background-color:#57C278 ;
-}
-
-.Front-End{
-    background-color: #E8F8FF;
-}
-
-.Front-End > .introducao >  hr{
-    border: 2px solid #82CFFA;
-    border-radius: 5px;
-    width: 32px;
-}
-
-.Front-End > .container__card > .card > .top__card{
-    background-color:#82CFFA ;
-}
-
-.Back-End{
-    background-color: #F0F8E2;
-}
-
-.Back-End > .introducao >  hr{
-    border: 2px solid #A6D157;
-    border-radius: 5px;
-    width: 32px; 
-}
-
-.Back-End > .container__card > .card > .top__card{
-    background-color: #A6D157;
-}
-
-.DevOps{
-    background-color: #FDE7E8;
-}
-
-.DevOps > .introducao >  hr{
-    border:2px solid #E06B69;
-    border-radius: 5px;
-    width: 32px;
-}
-
-.DevOps > .container__card > .card > .top__card{
-    background-color: #E06B69;
-}
-
-.Inovação{
-    background-color: #FFEEDF;
-}
-
-.Inovação > .introducao >  hr{
-    border:2px solid #FF8A29;
-    border-radius: 5px;
-    width: 32px; 
-}
-
-.Inovação > .container__card > .card > .top__card{
-    background-color: #FF8A29;
-}
-
-.Desing{
-    background-color: #FAE9F5;
-}
-
-.Desing > .introducao >  hr{
-    border:2px solid #DB6EBF;
-    border-radius: 5px;
-    width: 32px;
-}
-
-.Desing > .container__card > .card > .top__card{
-    background-color: #DB6EBF;
 }

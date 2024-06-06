@@ -15,7 +15,7 @@ export const ShowCollaborators = ({times, colaboradores}) => {
                     <hr/>
                 </div>
     
-                {times.map((time, index) => <ContainerTeam key={index} title={time} team={colaboradores.filter(colaborador => colaborador.team === time)}/>)}
+                {times.map((time, index) => <ContainerTeam key={index} title={time.nome} team={colaboradores.filter(colaborador => colaborador.team === time.nome)} corPrincipal={time.corPrincipal} corSecundaria={time.corSecundaria}/>)}
             </section>
         )
     }

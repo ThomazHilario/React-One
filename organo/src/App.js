@@ -10,12 +10,36 @@ function App() {
 
   // state - times
   const times = [
-    'Programação',
-    'Front-End',
-    'Back-End',
-    'DevOps',
-    'Desing',
-    'Inovaçao e Gestão'
+    {
+      nome:'Programação',
+      corPrincipal:'#57C278',
+      corSecundaria:'#D9F7E9'
+    },
+    {
+      nome:'Front-End',
+      corPrincipal:'#82CFFA',
+      corSecundaria:'#E8F8FF'
+    },
+    {
+      nome:'Back-End',
+      corPrincipal:'#A6D157',
+      corSecundaria:'#F0F8E2'
+    },
+    {
+      nome:'DevOps',
+      corPrincipal:'#E06B69',
+      corSecundaria:'#FDE7E8'
+    },
+    {
+      nome:'Desing',
+      corPrincipal:'#DB6EBF',
+      corSecundaria:'#FAE9F5'
+    },
+    {
+      nome:'Inovaçao e Gestão',
+      corPrincipal:'#FF8A29',
+      corSecundaria:'#FFEEDF'
+    }
   ]
 
   // Criando um novo colaborador
@@ -28,7 +52,7 @@ function App() {
   return (
     <div className="App">
       <Banner/>
-      <Form setColaboradores={newColaborador} times={times}/>
+      <Form setColaboradores={newColaborador} times={times.map(time => time.nome)}/>
       <ShowCollaborators times={times} colaboradores={colaboradores}/>
       <Footer/>
     </div>
