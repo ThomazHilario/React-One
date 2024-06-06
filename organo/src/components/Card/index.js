@@ -1,4 +1,4 @@
-export const Card = ({nome, cargo, imagem, corPrincipal}) => {
+export const Card = ({nome, cargo, imagem, corPrincipal, teamColaborador ,deletarColaborador}) => {
     return(
         <div className='card'>
             <div className='top__card' style={{backgroundColor:corPrincipal}}>

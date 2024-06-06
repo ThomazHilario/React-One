@@ -53,7 +53,7 @@ function App() {
     <div className="App">
       <Banner/>
       <Form setColaboradores={newColaborador} times={times.map(time => time.nome)}/>
-      <ShowCollaborators times={times} colaboradores={colaboradores}/>
+      <ShowCollaborators times={times} colaboradores={colaboradores} setColaboradores={setColaboradores}/>
       <Footer/>
     </div>
   );

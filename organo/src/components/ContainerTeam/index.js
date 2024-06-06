@@ -1,7 +1,7 @@
 // Components
 import { Card } from "../Card"
 
-export const ContainerTeam = ({title, team, corPrincipal, corSecundaria}) => {
+export const ContainerTeam = ({title, team, corPrincipal, corSecundaria, deletarColaborador}) => {
 
     // Verify teamNotIsEmpty
     const teamNotIsEmpty = team.length > 0
@@ -22,7 +22,9 @@ export const ContainerTeam = ({title, team, corPrincipal, corSecundaria}) => {
                             nome={colaborador.nome} 
                             cargo={colaborador.cargo} 
                             imagem={colaborador.imagem} 
-                            corPrincipal={corPrincipal} 
+                            teamColaborador={colaborador.team}
+                            corPrincipal={corPrincipal}
+                            deletarColaborador={deletarColaborador} 
                         />
                     ))}
                 </div>
