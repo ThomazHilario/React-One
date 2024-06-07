@@ -12,6 +12,8 @@ import './formulario.css'
 export const Form = ({setColaboradores, times}) => {
 
     // states
+    const [teamColor, setTeamColor] = useState('')
+    const [teamName, setTeamName] = useState('')
     const [name, setName] = useState('')
     const [cargo, setCargo] = useState('')
     const [imagem, setImagem] = useState('')
@@ -42,21 +44,24 @@ export const Form = ({setColaboradores, times}) => {
             <form onSubmit={handleSubmit}>
                 <h2>Preencha os dados para criar um colaborador:</h2>
 
-                <InputForm 
+                <InputForm
+                    type={'text'} 
                     nameLabel={'Nome'} 
                     textPlaceholder={'Digite o seu nome...'}
                     textInput={name}
                     setTextInput={setName}
                 />
 
-                <InputForm 
+                <InputForm
+                    type={'text'} 
                     nameLabel={'Cargo'} 
                     textPlaceholder={'Digite o seu cargo...'}
                     textInput={cargo}
                     setTextInput={setCargo}
                 />
 
-                <InputForm 
+                <InputForm
+                    type={'text'} 
                     nameLabel={'Imagem'} 
                     textPlaceholder={'Informe o endereço da imagem...'}
                     textInput={imagem}
@@ -64,6 +69,29 @@ export const Form = ({setColaboradores, times}) => {
                 />
 
                 <SuspenseList nameLabel={'Time'} itens={times} team={team} setTeam={setTeam}/>
+
+                <Button>
+                    Criar Card
+                </Button>
+            </form>
+
+            <form>
+                <h2>Preencha os dados para criar um novo time:</h2>
+
+                <InputForm 
+                    type={'text'}
+                    nameLabel={'Nome'}
+                    textPlaceholder={'Digite o nome do time...'}
+                    textInput={teamName}
+                    setTextInput={setTeamName}
+                />
+
+                <InputForm 
+                    type={'color'}
+                    nameLabel={'Cor'}
+                    textInput={teamColor}
+                    setTextInput={setTeamColor}
+                />
 
                 <Button>
                     Criar Time

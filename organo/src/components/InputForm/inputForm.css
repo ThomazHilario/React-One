@@ -13,11 +13,20 @@
 }
 
 /* input */
-.container__campo > input{
+.container__campo > input[type='text']{
     padding: 15px;
     border-radius: 4px;
     border: 0;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.674);
     outline: none;
     font-weight: 600;
+}
+
+.container__campo > input[type='color']{
+    width:100%;
+    background-color: white;
+    border: 0;
+    padding: 10px;
+    height: 50px;
+    border-radius: 4px;
 }
