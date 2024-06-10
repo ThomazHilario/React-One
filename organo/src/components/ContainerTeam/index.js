@@ -1,7 +1,7 @@
 // Components
 import { Card } from "../Card"
 
-export const ContainerTeam = ({title, team, times, setTimes, corPrincipal, corSecundaria, deletarColaborador}) => {
+export const ContainerTeam = ({title, team, times, setTimes, corPrincipal, deletarColaborador}) => {
 
     // Verify teamNotIsEmpty
     const teamNotIsEmpty = team.length > 0
@@ -10,12 +10,9 @@ export const ContainerTeam = ({title, team, times, setTimes, corPrincipal, corSe
     function updateColorTeam(e){
         // Alterando a cord de fundo do time em especifico
         setTimes(times.map(time => {
-            if(time.corPrincipal === corPrincipal){
+            if(time.cor === corPrincipal){
                 // Alterando a cor principal
-                time.corPrincipal = e.target.value
-
-                // Alterando a cor secundaria
-                time.corSecundaria = e.target.value + '90'
+                time.cor = e.target.value
             }
 
             return time
@@ -24,7 +21,7 @@ export const ContainerTeam = ({title, team, times, setTimes, corPrincipal, corSe
 
     if(teamNotIsEmpty){
         return(
-            <div className='container__team' style={{backgroundColor:corSecundaria}}>
+            <div className='container__team' style={{backgroundColor:`${corPrincipal}90`}}>
                 <input value={corPrincipal} onChange={updateColorTeam} type="color"/>
                 <div className='introducao'>
                     <h1>{title}</h1>

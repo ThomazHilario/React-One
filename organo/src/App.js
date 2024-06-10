@@ -12,33 +12,27 @@ function App() {
   const [times, setTimes] = useState([
     {
       nome:'Programação',
-      corPrincipal:'#57C278',
-      corSecundaria:'#D9F7E9'
+      cor:'#57C278',
     },
     {
       nome:'Front-End',
-      corPrincipal:'#82CFFA',
-      corSecundaria:'#E8F8FF'
+      cor:'#82CFFA',
     },
     {
       nome:'Back-End',
-      corPrincipal:'#A6D157',
-      corSecundaria:'#F0F8E2'
+      cor:'#A6D157',
     },
     {
       nome:'DevOps',
-      corPrincipal:'#E06B69',
-      corSecundaria:'#FDE7E8'
+      cor:'#E06B69',
     },
     {
       nome:'Desing',
-      corPrincipal:'#DB6EBF',
-      corSecundaria:'#FAE9F5'
+      cor:'#DB6EBF',
     },
     {
       nome:'Inovaçao e Gestão',
-      corPrincipal:'#FF8A29',
-      corSecundaria:'#FFEEDF'
+      cor:'#FF8A29',
     }
   ])
 

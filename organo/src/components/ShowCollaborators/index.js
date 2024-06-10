@@ -33,8 +33,7 @@ export const ShowCollaborators = ({times, setTimes, colaboradores, setColaborado
                         team={colaboradores.filter(colaborador => colaborador.team === time.nome)}
                         times={times} 
                         setTimes={setTimes}
-                        corPrincipal={time.corPrincipal} 
-                        corSecundaria={time.corSecundaria}
+                        corPrincipal={time.cor}
                         deletarColaborador={deletarColaborador}
                     />
                 ))}
