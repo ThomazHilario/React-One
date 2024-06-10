@@ -9,7 +9,7 @@ import { Button } from '../Button'
 
 import './formulario.css'
 
-export const Form = ({setColaboradores, times}) => {
+export const Form = ({setColaboradores, times, setTimes}) => {
 
     // states
     const [teamColor, setTeamColor] = useState('#000000')
@@ -37,6 +37,22 @@ export const Form = ({setColaboradores, times}) => {
             setCargo('')
             setImagem('')
         }
+    }
+
+    // handleCreateNewTeam
+    function handleCreateNewTeam(e){
+        // Cancelar o envio do formulario
+        e.preventDefault()
+
+        // Salvando o state de times com o novo time
+        setTimes([...times, {
+            nome: teamName,
+            cor:teamColor
+        }])
+
+        // Resetando states
+        setTeamName('')
+        setTeamColor('#000000')
     }
 
     return(
@@ -68,14 +84,14 @@ export const Form = ({setColaboradores, times}) => {
                     setTextInput={setImagem}
                 />
 
-                <SuspenseList nameLabel={'Time'} itens={times} team={team} setTeam={setTeam}/>
+                <SuspenseList nameLabel={'Time'} itens={times.map(time => time.nome)} team={team} setTeam={setTeam}/>
 
                 <Button>
                     Criar Card
                 </Button>
             </form>
 
-            <form>
+            <form onSubmit={handleCreateNewTeam}>
                 <h2>Preencha os dados para criar um novo time:</h2>
 
                 <InputForm 

@@ -46,7 +46,7 @@ function App() {
   return (
     <div className="App">
       <Banner/>
-      <Form setColaboradores={newColaborador} times={times.map(time => time.nome)}/>
+      <Form setColaboradores={newColaborador} times={times} setTimes={setTimes} />
       <ShowCollaborators times={times} setTimes={setTimes} colaboradores={colaboradores} setColaboradores={setColaboradores}/>
       <Footer/>
     </div>
