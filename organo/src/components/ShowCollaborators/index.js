@@ -3,7 +3,7 @@ import { ContainerTeam } from '../ContainerTeam'
 
 import './showCollaborators.css'
 
-export const ShowCollaborators = ({times, colaboradores, setColaboradores}) => {
+export const ShowCollaborators = ({times, setTimes, colaboradores, setColaboradores}) => {
 
     const collaboratornNotIsEmpty = colaboradores.length > 0
 
@@ -30,7 +30,10 @@ export const ShowCollaborators = ({times, colaboradores, setColaboradores}) => {
                 {times.map((time, index) => (
                     <ContainerTeam key={index} 
                         title={time.nome} 
-                        team={colaboradores.filter(colaborador => colaborador.team === time.nome)} corPrincipal={time.corPrincipal} 
+                        team={colaboradores.filter(colaborador => colaborador.team === time.nome)}
+                        times={times} 
+                        setTimes={setTimes}
+                        corPrincipal={time.corPrincipal} 
                         corSecundaria={time.corSecundaria}
                         deletarColaborador={deletarColaborador}
                     />

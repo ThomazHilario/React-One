@@ -9,7 +9,7 @@ function App() {
   const [colaboradores, setColaboradores] = useState([])
 
   // state - times
-  const times = [
+  const [times, setTimes] = useState([
     {
       nome:'Programação',
       corPrincipal:'#57C278',
@@ -40,7 +40,7 @@ function App() {
       corPrincipal:'#FF8A29',
       corSecundaria:'#FFEEDF'
     }
-  ]
+  ])
 
   // Criando um novo colaborador
   function newColaborador(colaborador){
@@ -53,7 +53,7 @@ function App() {
     <div className="App">
       <Banner/>
       <Form setColaboradores={newColaborador} times={times.map(time => time.nome)}/>
-      <ShowCollaborators times={times} colaboradores={colaboradores} setColaboradores={setColaboradores}/>
+      <ShowCollaborators times={times} setTimes={setTimes} colaboradores={colaboradores} setColaboradores={setColaboradores}/>
       <Footer/>
     </div>
   );

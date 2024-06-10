@@ -12,7 +12,7 @@ import './formulario.css'
 export const Form = ({setColaboradores, times}) => {
 
     // states
-    const [teamColor, setTeamColor] = useState('')
+    const [teamColor, setTeamColor] = useState('#000000')
     const [teamName, setTeamName] = useState('')
     const [name, setName] = useState('')
     const [cargo, setCargo] = useState('')
