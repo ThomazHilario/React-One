@@ -14,7 +14,8 @@
 
 /* input */
 .container__campo > input[type='text']{
-    padding: 15px;
+    width: 100%;
+    padding: 10px;
     border-radius: 4px;
     border: 0;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.674);

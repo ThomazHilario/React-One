@@ -1,11 +1,13 @@
 .section__formulario{
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
     margin: 40px 0;
 }
 
 .section__formulario > form{
-    max-width: 80%;
+    width: 43rem;
+    margin: 10px;
     background-color: #F2F2F2;
     padding: 36px 64px;
     border-radius: 5px;
