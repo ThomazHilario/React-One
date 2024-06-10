@@ -29,7 +29,8 @@ export const Form = ({setColaboradores, times, setTimes}) => {
                 nome:name,
                 cargo:cargo,
                 imagem:imagem,
-                team:team
+                team:team,
+                favorite:false
             })
     
             // Limpando states

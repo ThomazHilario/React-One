@@ -33,12 +33,15 @@ export const ContainerTeam = ({title, team, times, setTimes, corPrincipal, delet
                     {team.map((colaborador, index) => (
                         <Card 
                             key={index} 
+                            times={times}
+                            setTimes={setTimes}
                             nome={colaborador.nome} 
                             cargo={colaborador.cargo} 
                             imagem={colaborador.imagem} 
                             teamColaborador={colaborador.team}
                             corPrincipal={corPrincipal}
-                            deletarColaborador={deletarColaborador} 
+                            deletarColaborador={deletarColaborador}
+                            colaborador={colaborador}
                         />
                     ))}
                 </div>

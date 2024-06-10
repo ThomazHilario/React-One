@@ -1,11 +1,16 @@
-import { useState } from 'react'
-
 // lucide react
 import { BadgeX, Heart } from 'lucide-react'
 
-export const Card = ({nome, cargo, imagem, corPrincipal, teamColaborador ,deletarColaborador}) => {
+export const Card = ({times, setTimes, nome, cargo, imagem, corPrincipal, teamColaborador ,deletarColaborador, colaborador}) => {
 
-    const [isMyFavoriteCard, setIsMyFavoriteCard] = useState(false)
+    // favoriteCard
+    function favoriteCard(){
+        // Alterando o status do favorite
+        colaborador.favorite = !colaborador.favorite
+
+        // Salvando as alteracoes na state de times
+        setTimes([...times])
+    }
 
     return(
         <div className='card'>
@@ -18,8 +23,8 @@ export const Card = ({nome, cargo, imagem, corPrincipal, teamColaborador ,deleta
                 <h3>{cargo}</h3>
                 <Heart 
                     size={20}
-                    color={isMyFavoriteCard ? 'red' : 'black'}
-                    onClick={() => setIsMyFavoriteCard(!isMyFavoriteCard)}
+                    color={colaborador.favorite ? 'red' : 'black'}
+                    onClick={favoriteCard}
                 />
             </div>
         </div>
