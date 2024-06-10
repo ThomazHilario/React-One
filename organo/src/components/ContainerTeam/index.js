@@ -9,10 +9,17 @@ export const ContainerTeam = ({title, team, times, setTimes, corPrincipal, corSe
     // updateColorTeam
     function updateColorTeam(e){
         // Alterando a cord de fundo do time em especifico
-        times.map(time => time.corPrincipal === corPrincipal ? time.corPrincipal = e.target.value : time)
+        setTimes(times.map(time => {
+            if(time.corPrincipal === corPrincipal){
+                // Alterando a cor principal
+                time.corPrincipal = e.target.value
 
-        // Setando as alteracoes
-        setTimes([...times])
+                // Alterando a cor secundaria
+                time.corSecundaria = e.target.value + '90'
+            }
+
+            return time
+        }))
     }
 
     if(teamNotIsEmpty){
