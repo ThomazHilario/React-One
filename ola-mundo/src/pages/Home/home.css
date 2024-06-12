@@ -1,5 +1,12 @@
+main{
+    margin-top: -3rem;
+}
+
 .container__cards{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    list-style: none;
 }
