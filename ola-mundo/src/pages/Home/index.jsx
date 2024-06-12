@@ -9,7 +9,7 @@ import './home.css'
 
 export const Home = () => {
     return(
-        <main>
+        <main className='container__home'>
             <ul className='container__cards'>
                 {posts.map(post => <li key={post.id}><Card id={post.id} titulo={post.titulo}/></li>)}
             </ul>

@@ -1,0 +1,9 @@
+.postModel{
+    padding: 30px 70px;
+}
+
+.postModel > h1{
+    font-family: "Playfair Display", serif;
+    font-size: 40px;
+    color: #444444;
+}

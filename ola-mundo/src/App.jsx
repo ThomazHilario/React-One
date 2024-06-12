@@ -7,6 +7,7 @@ import { Footer } from './Components/Footer'
 
 // Pages
 import { Home } from './pages/Home'
+import { Sobremim } from './pages/Sobremim'
 import { Error } from './pages/Error'
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
 
         <Routes>
           <Route path='/' element={<Home/>}/>
+          <Route path='/sobremim' element={<Sobremim/>}/>
           <Route path='*' element={<Error/>}/>
         </Routes>
 
