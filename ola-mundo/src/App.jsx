@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 
 // components
 import { Banner } from './Components/Banner'
+import { Footer } from './Components/Footer'
 
 // Pages
 import { Home } from './pages/Home'
@@ -26,6 +27,8 @@ function App() {
           <Route path='/' element={<Home/>}/>
           <Route path='*' element={<Error/>}/>
         </Routes>
+
+        <Footer/>
     </BrowserRouter>
   )
 }
