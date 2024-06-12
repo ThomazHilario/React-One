@@ -1,0 +1,42 @@
+.container__banner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #041833;
+    color: white;
+    height: 548px;
+}
+
+.banner{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #041833;
+    color: white;
+    height: 548px;
+}
+
+.banner > article{
+    width: 36.80rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.banner > article > h1{
+    font-size: 64px;
+    font-weight: 700;
+}
+
+.banner > article > p{
+    font-size: 24px;
+    line-height: 2rem;
+    text-align: justify;
+}
+
+/* imagem */
+.container__imagem{
+    height: 400px;
+    width: 440px;
+    background-color: violet;
+}
