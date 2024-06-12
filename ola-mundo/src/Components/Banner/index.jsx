@@ -1,3 +1,4 @@
+import Foto from '../../assets/foto.png'
 import './banner.css'
 
 export const Banner = () => {
@@ -10,7 +11,7 @@ export const Banner = () => {
                 </article>
 
                 <div className='container__imagem'>
-                  d
+                  <img src={Foto} alt='imagem '/>
                 </div>
             </div>
     )

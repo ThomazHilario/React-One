@@ -38,5 +38,14 @@
 .container__imagem{
     height: 400px;
     width: 440px;
-    background-color: violet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container__imagem > img {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    object-fit: cover;
 }
