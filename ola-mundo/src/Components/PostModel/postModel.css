@@ -1,5 +1,8 @@
 .postModel{
-    padding: 30px 70px;
+    padding: 40px 100px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .postModel > h1{
