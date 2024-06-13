@@ -9,13 +9,21 @@
     left: 0;
 }
 
-.container__postmodel > h1{
-    font-family: "Playfair Display", serif;
-    font-size: 40px;
-    color: #444444;
-    height: 150px;
-    padding: 20px 6.7rem;
-    display: flex;
-    justify-content: start;
-    align-items: center;
+@media screen and (min-width:320px){
+    .container__postmodel > h1{
+        font-family: "Playfair Display", serif;
+        font-size: 1.3rem;
+        color: #444444;
+        height: 150px;
+        padding: 20px 6.7rem;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width:720px){
+    .container__postmodel > h1{
+        font-size: 3rem;
+    }
 }
