@@ -1,0 +1,25 @@
+.container__error{
+    font-family: "Raleway", sans-serif;;
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.container__error > h1{
+    font-size: 4rem;
+}
+
+.container__error > h2{
+    color: black;
+}
+
+.container__error > a{
+    text-decoration: none;
+    background-color: rgb(85, 85, 213);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
