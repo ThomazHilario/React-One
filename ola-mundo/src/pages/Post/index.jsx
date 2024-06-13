@@ -1,5 +1,5 @@
 // React router dom
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 
 // Components
 import { PostModel } from "../../Components/PostModel"
@@ -31,7 +31,12 @@ export const Post = () => {
                         <MarkDown>{post.texto}</MarkDown>
                     </div>
                 </div>
-                ) : <div>Nao existe este post</div>
+                ) : (
+                    <div className="container__post__erro">
+                        <h1>Este post não existe!!!</h1>
+                        <Link to='/'>Voltar</Link>
+                    </div>
+                    )
              }
         </>
     )

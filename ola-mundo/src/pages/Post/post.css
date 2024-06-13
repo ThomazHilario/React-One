@@ -32,3 +32,24 @@
     list-style-type: '🔗';
     padding: 0 2rem;
 }
+
+
+/* container__post__erro */
+.container__post__erro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 40px;
+    font-family: "Raleway", sans-serif;
+}
+
+.container__post__erro > a{
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: rgb(75, 75, 203);
+    color: white;
+    border-radius: 20px;
+}
