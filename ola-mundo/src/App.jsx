@@ -8,6 +8,7 @@ import { Footer } from './Components/Footer'
 // Pages
 import { Home } from './pages/Home'
 import { Sobremim } from './pages/Sobremim'
+import { Post } from './pages/Post'
 import { Error } from './pages/Error'
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/sobremim' element={<Sobremim/>}/>
+          <Route path='/post/:id' element={<Post/>}/>
           <Route path='*' element={<Error/>}/>
         </Routes>
 
