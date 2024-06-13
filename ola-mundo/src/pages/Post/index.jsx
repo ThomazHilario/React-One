@@ -7,6 +7,12 @@ import { PostModel } from "../../Components/PostModel"
 // import Array
 import PostArray from '../../posts.json'
 
+// import markdown
+import MarkDown from 'react-markdown'
+
+// css import
+import './post.css'
+
 export const Post = () => {
 
     // pegando o id passado por parametro da url
@@ -18,6 +24,10 @@ export const Post = () => {
     return(
         <div>
             <PostModel titulo={post.titulo} urlImage={`/posts/${id}/capa.png`}/>
+
+            <div className="container__markdown">
+                <MarkDown>{post.texto}</MarkDown>
+            </div>
         </div>
     )
 }
