@@ -22,12 +22,17 @@ export const Post = () => {
     const post = PostArray.find(post => String(post.id) === id)
 
     return(
-        <div>
-            <PostModel titulo={post.titulo} urlImage={`/posts/${id}/capa.png`}/>
+        <> 
+            { post ? (
+                <div>
+                    <PostModel titulo={post.titulo} urlImage={`/posts/${id}/capa.png`}/>
 
-            <div className="container__markdown">
-                <MarkDown>{post.texto}</MarkDown>
-            </div>
-        </div>
+                    <div className="container__markdown">
+                        <MarkDown>{post.texto}</MarkDown>
+                    </div>
+                </div>
+                ) : <div>Nao existe este post</div>
+             }
+        </>
     )
 }
