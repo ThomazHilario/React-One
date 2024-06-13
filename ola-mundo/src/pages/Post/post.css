@@ -4,17 +4,10 @@
     margin-top: 40px;
 }
 
-.container__markdown h1, h2, h3, h4, h5{
-    margin: 1rem 0;
-    font-size: 40px;
-    color: #444444;
-    font-family: "Playfair Display", serif;;
-}
-
-.container__markdown p{
-    margin: 1.5rem 0;
-    font-size: 20px;
-    font-family: "Raleway", sans-serif;
+.container__markdown img{
+    height: 150px;
+    display: block;
+    margin: auto;
 }
 
 .container__markdown pre{
@@ -52,4 +45,29 @@
     background-color: rgb(75, 75, 203);
     color: white;
     border-radius: 20px;
+}
+
+@media screen and (min-width:320px){
+    .container__markdown p{
+        margin: 1.5rem 0;
+        font-size: 0.7rem;
+        font-family: "Raleway", sans-serif;
+    }
+
+    .container__markdown h1, h2, h3, h4, h5{
+        margin: 1rem 0;
+        font-size: 2rem;
+        color: #444444;
+        font-family: "Playfair Display", serif;;
+    }
+}
+
+@media screen and (min-width:550px){
+    .container__markdown p{
+        font-size: 1.5rem;
+    }
+
+    .container__markdown h1, h2, h3, h4, h5{
+        font-size: 3rem;
+    }
 }
