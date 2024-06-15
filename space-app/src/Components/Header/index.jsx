@@ -2,9 +2,15 @@ import styled from "styled-components";
 
 export const Header = styled.header`
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     padding:30px 0px;
+
+    /* menu */
+    svg:nth-child(1){
+        display: block;
+    }
 
     /* img */
     img{
@@ -14,6 +20,7 @@ export const Header = styled.header`
     & > .container__input{
         border-radius: 5px;
         overflow: hidden;
+        margin: 20px 0;
     }
 
     & > .container__input > .radius{
@@ -31,10 +38,23 @@ export const Header = styled.header`
     /* Input */
     & > .container__input > .radius > input{
         padding: 8px 0px;
-        width: 23vw;
+        width: 100vw;
         background-color: transparent;
         color: rgba(217, 217, 217, 1);
         outline: none;
         border: 0px;
+    }
+
+    @media screen and (min-width:580px){
+        svg:nth-child(1){
+            display: none;
+        }
+
+        & > .container__input > .radius > input{
+            width: 30vw;
+        }
+        & > .container__input{
+            margin: 0;
+        }
     }
 `

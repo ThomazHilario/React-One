@@ -3,6 +3,15 @@ import styled from "styled-components"
 // Components
 import { ItemList } from "./item-list"
 
+const AsideStyled = styled.aside`
+
+    display: none;
+
+    @media screen and (min-width:580px){
+        display: block;
+    }
+`
+
 const ListStyleCss = styled.ul`
     margin: 0;
     padding: 0;
@@ -12,7 +21,7 @@ const ListStyleCss = styled.ul`
 
 export const Aside = () => {
     return(
-        <aside>
+        <AsideStyled>
             <nav>
                 <ListStyleCss>
                     <ItemList 
@@ -51,6 +60,6 @@ export const Aside = () => {
                     />
                 </ListStyleCss>
             </nav>
-        </aside>
+        </AsideStyled>
     )
 }
