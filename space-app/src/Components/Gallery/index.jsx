@@ -1,5 +1,5 @@
 import { Title } from "../Title"
-import { Tags } from "./tags"
+import { Tags } from "../Tags"
 
 // styled Components
 import styled from "styled-components"
