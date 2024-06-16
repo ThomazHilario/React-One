@@ -5,7 +5,6 @@ import banner from '../../assets/imagens/banner.svg'
 
 const ContentBanner = styled.div`
     height: 200px;
-    width: 100%;
     background-image: url(${banner});
     background-size: cover;
     background-position: center center;

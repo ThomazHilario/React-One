@@ -25,6 +25,10 @@ const MainStyled = styled.main`
   display:flex;
 `
 
+const ContainerArticle = styled.article`
+  width: 100%;
+`
+
 function App() {
 
   return (
@@ -42,7 +46,10 @@ function App() {
 
           <MainStyled>
             <Aside/>
-            <Banner/>
+            
+            <ContainerArticle>
+              <Banner/>
+            </ContainerArticle>
           </MainStyled>
         </Container>
       </ContainerApp>
