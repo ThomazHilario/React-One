@@ -4,10 +4,11 @@ import styled from 'styled-components'
 import banner from '../../assets/imagens/banner.svg'
 
 const ContentBanner = styled.div`
-    height: 330px;
+    height: 200px;
     width: 100%;
     background-image: url(${banner});
     background-size: cover;
+    background-position: center center;
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
@@ -15,11 +16,28 @@ const ContentBanner = styled.div`
     border-radius: 20px;
 
     h1{
-        width: 230px;
+        display:none;
+        width:250px;
         font-weight: 400;
         font-size: 2rem;
         word-wrap: break-word;
         color: rgba(255, 255, 255, 1);
+    }
+
+    @media screen and (min-width:400px){
+        &{
+            height: 230px;
+        }
+
+        h1{
+            display: block;
+        }
+    }
+
+    @media screen and (min-width:1024px){
+        &{
+            height: 280px;
+        }
     }
 `
 
