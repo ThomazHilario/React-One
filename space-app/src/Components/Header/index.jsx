@@ -7,11 +7,6 @@ export const Header = styled.header`
     align-items: center;
     padding:30px 0px;
 
-    /* menu */
-    svg:nth-child(1){
-        display: block;
-    }
-
     /* img */
     img{
         height:50px
@@ -46,10 +41,6 @@ export const Header = styled.header`
     }
 
     @media screen and (min-width:580px){
-        svg:nth-child(1){
-            display: none;
-        }
-
         & > .container__input > .radius > input{
             width: 30vw;
         }
