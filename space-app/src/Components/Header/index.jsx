@@ -9,7 +9,7 @@ export const Header = styled.header`
 
     /* img */
     img{
-        height:50px
+        height:50px;
     }
 
     & > .container__input{
@@ -40,7 +40,7 @@ export const Header = styled.header`
         border: 0px;
     }
 
-    @media screen and (min-width:580px){
+    @media screen and (min-width:768px){
         & > .container__input > .radius > input{
             width: 30vw;
         }

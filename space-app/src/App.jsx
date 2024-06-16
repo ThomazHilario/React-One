@@ -10,6 +10,7 @@ import { MenuDialog } from './Components/Menu/menu-dialog'
 import { Input } from './Components/Input'
 import { Aside } from './Components/Aside'
 import { Banner } from './Components/Banner'
+import { Gallery } from './Components/Gallery'
 
 
 const ContainerApp = styled.div`
@@ -27,6 +28,10 @@ const MainStyled = styled.main`
 
 const ContainerArticle = styled.article`
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 2rem;
 `
 
 function App() {
@@ -49,6 +54,8 @@ function App() {
             
             <ContainerArticle>
               <Banner/>
+
+              <Gallery/>
             </ContainerArticle>
           </MainStyled>
         </Container>

@@ -7,7 +7,7 @@ const AsideStyled = styled.aside`
 
     display: none;
 
-    @media screen and (min-width:580px){
+    @media screen and (min-width:768px){
         display: block;
     }
 `

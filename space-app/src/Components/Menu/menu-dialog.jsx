@@ -14,7 +14,7 @@ const DialogTrigger = styled(Dialog.Trigger)`
     background-color: transparent;
     border: 0;
 
-    @media screen and (min-width:580px){
+    @media screen and (min-width:768px){
         display: none;
     }
 `
