@@ -1,3 +1,7 @@
+// react
+import { useState } from 'react'
+
+// styled Componentes
 import styled from 'styled-components'
 
 // logo svg
@@ -12,6 +16,8 @@ import { Aside } from './Components/Aside'
 import { Banner } from './Components/Banner'
 import { Gallery } from './Components/Gallery'
 
+// fotos Array
+import fotosArr from './fotos.json'
 
 const ContainerApp = styled.div`
   background: linear-gradient(174.61deg, #041833 4.16%, #04244F 48%, #154580 96.76%);
@@ -36,6 +42,8 @@ const ContainerArticle = styled.article`
 
 function App() {
 
+  const [fotos, setFotos] = useState(fotosArr)
+
   return (
       <ContainerApp>
         <Globalcss/>
@@ -55,7 +63,9 @@ function App() {
             <ContainerArticle>
               <Banner/>
 
-              <Gallery/>
+              <Gallery 
+                fotos={fotos}
+              />
             </ContainerArticle>
           </MainStyled>
         </Container>
