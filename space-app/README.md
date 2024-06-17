@@ -1,8 +1,12 @@
-# React + Vite
+# Space-app
+- Projeto space-app, designado a desenvolver uma aplicação usando React e styled Components
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Tecnologias utilizadas:
+- React
+- Styled Components
+- Radix UI
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Como rodar o Projeto:
+- Clona-lo em sua máquina.
+- Instalar todas as dependências do projeto usando o comando: npm install
+- e Rodar o projeto utilizando o comando: npm ru dev
