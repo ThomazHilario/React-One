@@ -1,5 +1,8 @@
 import styled from "styled-components"
 
+// Components
+import { Modal } from "../Modal"
+
 //  lucide-react
 import { Heart, Expand } from "lucide-react"
 
@@ -21,7 +24,7 @@ const FigureStyled = styled.figure`
     figcaption{
         background-color: rgba(0, 22, 52, 1);
         border-radius: 0 0 20px 20px;
-        padding: 1rem 1rem;
+        padding: 1rem 1rem 0.5rem 1rem;
         h3{
             margin: 0px;
         }
@@ -29,6 +32,8 @@ const FigureStyled = styled.figure`
         div{
             display: flex;
             justify-content: space-between;
+            align-items: center;
+            margin-top: 5px;
 
             p{
                 margin: 0;
@@ -36,6 +41,8 @@ const FigureStyled = styled.figure`
 
             .icons{
                 display: flex;
+                justify-content: center;
+                align-items: center;
                 gap: 1rem;
             }
         }
@@ -66,7 +73,7 @@ export const Card = ({url,titulo,fonte}) => {
 
                     <div className="icons">
                         <Heart color='white' size={20}/>
-                        <Expand color='white' size={20}/>
+                        <Modal foto={url} titulo={titulo} fonte={fonte}/>
                     </div>
                 </div>
             </figcaption>
