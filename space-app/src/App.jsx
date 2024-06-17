@@ -15,6 +15,7 @@ import { Input } from './Components/Input'
 import { Aside } from './Components/Aside'
 import { Banner } from './Components/Banner'
 import { Gallery } from './Components/Gallery'
+import { Footer } from './Components/Footer'
 
 // fotos Array
 import fotosArr from './fotos.json'
@@ -26,6 +27,7 @@ const ContainerApp = styled.div`
 
 const Container = styled.div`
   margin:0px 20px;
+  margin-bottom: 2rem;
 `
 
 const MainStyled = styled.main`
@@ -75,6 +77,7 @@ function App() {
             </ContainerArticle>
           </MainStyled>
         </Container>
+        <Footer/>
       </ContainerApp>
   )
 }
