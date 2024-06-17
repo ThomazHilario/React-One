@@ -77,7 +77,7 @@ const DialogContent = styled(Dialog.Content)`
 
 `
 
-export const Modal = ({foto, titulo, fonte}) => {
+export const Modal = ({foto, titulo, fonte, index, favoriteCard, isFavorite}) => {
     return(
         <Dialog.Root>
             <DialogTrigger>
@@ -98,7 +98,7 @@ export const Modal = ({foto, titulo, fonte}) => {
                                 <p>{fonte}</p>
 
                                 <div className="icons">
-                                    <Heart color='white' size={20} cursor='pointer'/>
+                                    <Heart onClick={() => favoriteCard(index)} color={isFavorite ? 'red' : 'white'} size={20} cursor='pointer'/>
                                 </div>
                             </div>
                         </figcaption>

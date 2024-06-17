@@ -74,7 +74,14 @@ export const Card = ({index, url, titulo, fonte, isFavorite, favoriteCard}) => {
 
                     <div className="icons">
                         <Heart onClick={() => favoriteCard(index)} color={isFavorite ? 'red' : 'white'} size={20}/>
-                        <Modal foto={url} titulo={titulo} fonte={fonte}/>
+                        <Modal 
+                            foto={url} 
+                            titulo={titulo} 
+                            fonte={fonte} 
+                            index={index}
+                            isFavorite={isFavorite} 
+                            favoriteCard={favoriteCard}
+                        />
                     </div>
                 </div>
             </figcaption>
