@@ -8,6 +8,11 @@ import styled from "styled-components"
 
 const GalleryContainer = styled.div`
     display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width:768px){
+        flex-direction: row;
+    }
 `
 
 const GalleryContent = styled.section`
@@ -38,7 +43,16 @@ const PopularContainer = styled.section`
 const CardContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
+    justify-content: center;
+    gap: 1rem;
+
+    @media screen and (min-width:768px){
+        justify-content: start;
+    }
+
+    @media screen and (min-width:800px){
+        gap:2rem
+    }
 `
 
 export const Gallery = ({fotos}) => {
