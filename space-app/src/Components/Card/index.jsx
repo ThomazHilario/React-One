@@ -62,7 +62,8 @@ const FigureStyled = styled.figure`
     
 `
 
-export const Card = ({url,titulo,fonte}) => {
+export const Card = ({index, url, titulo, fonte, isFavorite, favoriteCard}) => {
+
     return(
         <FigureStyled>
             <img src={url} alt={titulo}/>
@@ -72,7 +73,7 @@ export const Card = ({url,titulo,fonte}) => {
                     <p>{fonte}</p>
 
                     <div className="icons">
-                        <Heart color='white' size={20}/>
+                        <Heart onClick={() => favoriteCard(index)} color={isFavorite ? 'red' : 'white'} size={20}/>
                         <Modal foto={url} titulo={titulo} fonte={fonte}/>
                     </div>
                 </div>

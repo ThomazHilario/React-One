@@ -42,7 +42,12 @@ const ContainerArticle = styled.article`
 
 function App() {
 
-  const [fotos, setFotos] = useState(fotosArr)
+  const [fotos, setFotos] = useState(fotosArr.map(fotos => {
+    return {
+      ...fotos,
+      isFavorite:false
+    }
+  }))
 
   return (
       <ContainerApp>
@@ -65,6 +70,7 @@ function App() {
 
               <Gallery 
                 fotos={fotos}
+                setFotos={setFotos}
               />
             </ContainerArticle>
           </MainStyled>

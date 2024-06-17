@@ -55,7 +55,19 @@ const CardContainer = styled.div`
     }
 `
 
-export const Gallery = ({fotos}) => {
+export const Gallery = ({fotos, setFotos}) => {
+
+    // favoriteCard
+    function favoriteCard(index){       
+
+        // Alterando o valor da propriedada isFavorite
+        fotos[index].isFavorite = !fotos[index].isFavorite
+
+        // Salvando as alterações feitas
+        setFotos([...fotos])
+
+    }
+
     return(
         <div>
             <Tags />
@@ -64,12 +76,15 @@ export const Gallery = ({fotos}) => {
                     <Title>Navegue pela galeria</Title>
 
                     <CardContainer>
-                        {fotos.map(foto => (
+                        {fotos.map((foto, idx) => (
                             <Card 
                                 key={foto.id} 
+                                index={idx}
                                 url={foto.path} 
                                 titulo={foto.titulo}
                                 fonte={foto.fonte}
+                                favoriteCard={favoriteCard}
+                                isFavorite={foto.isFavorite}
                             />
                         ))}
                     </CardContainer>
@@ -78,7 +93,7 @@ export const Gallery = ({fotos}) => {
                 <PopularContainer>
                     <Title $align='center'>Populares</Title>
 
-                    {fotos.map(foto => <img src={foto.path}/>)}
+                    {fotos.map(foto => <img  key={foto.id} src={foto.path}/>)}
                 </PopularContainer>
             </GalleryContainer>
         </div>
