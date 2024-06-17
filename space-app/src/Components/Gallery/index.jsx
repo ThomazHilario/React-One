@@ -55,13 +55,13 @@ const CardContainer = styled.div`
     }
 `
 
-export const Gallery = ({fotos, setFotos}) => {
+export const Gallery = ({fotos, setFotos, fotosFiltered}) => {
 
     // favoriteCard
     function favoriteCard(index){       
 
         // Alterando o valor da propriedada isFavorite
-        fotos[index].isFavorite = !fotos[index].isFavorite
+        fotosFiltered[index].isFavorite = !fotosFiltered[index].isFavorite
 
         // Salvando as alterações feitas
         setFotos([...fotos])
@@ -76,7 +76,7 @@ export const Gallery = ({fotos, setFotos}) => {
                     <Title>Navegue pela galeria</Title>
 
                     <CardContainer>
-                        {fotos.map((foto, idx) => (
+                        {fotosFiltered.map((foto, idx) => (
                             <Card 
                                 key={foto.id} 
                                 index={idx}

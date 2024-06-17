@@ -23,6 +23,9 @@ import fotosArr from './fotos.json'
 const ContainerApp = styled.div`
   background: linear-gradient(174.61deg, #041833 4.16%, #04244F 48%, #154580 96.76%);
   min-height:100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `
 
 const Container = styled.div`
@@ -51,6 +54,11 @@ function App() {
     }
   }))
 
+  // Search - state
+  const [search, setSearch] = useState('')
+
+  const fotosFiltered = search !== '' ? fotos.filter(foto => foto.titulo.toLowerCase().includes(search.toLowerCase())) : fotos
+
   return (
       <ContainerApp>
         <Globalcss/>
@@ -61,7 +69,7 @@ function App() {
 
             <img src={Logo} alt="Logo do space-app" />
 
-            <Input/>
+            <Input search={search} setSearch={setSearch}/>
           </Header>
 
           <MainStyled>
@@ -72,6 +80,7 @@ function App() {
 
               <Gallery 
                 fotos={fotos}
+                fotosFiltered={fotosFiltered}
                 setFotos={setFotos}
               />
             </ContainerArticle>
