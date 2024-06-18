@@ -16,7 +16,7 @@ export const ContextProvider = ({children}) => {
     const [valorTotalCarrinho, setValorTotalCarrinho] = useState(0);
 
     return(
-        <Context.Provider value={{carrinho, setCarrinho}}>
+        <Context.Provider value={{carrinho, setCarrinho, quantidadeProdutos, setQuantidadeProdutos, valorTotalCarrinho, setValorTotalCarrinho}}>
             {children}
         </Context.Provider>
     )
