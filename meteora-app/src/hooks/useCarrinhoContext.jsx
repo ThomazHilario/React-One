@@ -1,7 +1,15 @@
+import { useEffect } from 'react';
 import { UseMyContext } from '../context'
 
 export const UseCarrinhoContext = () => {
-    const { carrinho, setCarrinho } = UseMyContext()
+    const { 
+      carrinho, 
+      setCarrinho, 
+      quantidade, 
+      setQuantidade, 
+      valorTotal, 
+      setValorTotal 
+    } = UseMyContext()
 
     // Adicionar produto
     function adicionarProduto(novoProduto) {
@@ -9,12 +17,13 @@ export const UseCarrinhoContext = () => {
         
         if (!temOProduto) {
           novoProduto.quantidade = 1;
-          return setCarrinho((carrinhoAnterior) => [
+          setCarrinho((carrinhoAnterior) => [
             ...carrinhoAnterior,
             novoProduto,
           ]);
+          return
         }
-    
+
         setCarrinho(carrinho.map(itemcart => {
           // Incrementando a quantidade caso o produto esteja no carrinho
           if(itemcart.id === novoProduto.id){
@@ -25,7 +34,6 @@ export const UseCarrinhoContext = () => {
           // retornando o produto do carrinho caso o id seja diferente
           return itemcart
         }))
-        
     }
 
     // removerProduto
@@ -41,8 +49,6 @@ export const UseCarrinhoContext = () => {
         return
       }
 
-      console.log(carrinho.map(itemCart => itemCart.id === produto.id ? itemCart.quantidade - 1 : itemCart))
-
       // Caso o produto tenha a quantidade superior a 1, diminuimos a quantidade em 1
       setCarrinho(carrinho.map(itemCart => {
         if(itemCart.id === produto.id){
@@ -52,8 +58,28 @@ export const UseCarrinhoContext = () => {
 
         return itemCart
       }))
-      
     }
+
+    useEffect(() => {
+      // calculandoValorTotal
+      function calculandoOValorTotal(){
+        // Percorrendo o array de produtos
+        const precosDosProdutos = carrinho.map(itemCart => {
+          return itemCart.preco * itemCart.quantidade
+        })
+
+        // Caso tenha somente um produto no carrinho
+        if(carrinho.length === 1){
+          setValorTotal(precosDosProdutos)
+          return
+        }
+
+        // Caso tenha mais de dois produtos na state carrinho
+        setValorTotal(carrinho.length > 0 ? precosDosProdutos.reduce((acc,item) => item += acc) : 0)
+      }
+
+      calculandoOValorTotal()
+    },[carrinho])
 
     // removerProdutoCarrinho
     function removerProdutoCarrinho(idProduto){
