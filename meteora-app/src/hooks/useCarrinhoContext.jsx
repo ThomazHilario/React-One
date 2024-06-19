@@ -79,6 +79,7 @@ export const UseCarrinhoContext = () => {
       }
 
       calculandoOValorTotal()
+      setQuantidade(carrinho.length)
     },[carrinho])
 
     // removerProdutoCarrinho
@@ -91,7 +92,9 @@ export const UseCarrinhoContext = () => {
         setCarrinho,
         adicionarProduto,
         removerProduto,
-        removerProdutoCarrinho
+        removerProdutoCarrinho,
+        valorTotal,
+        quantidade
     }
       
 }

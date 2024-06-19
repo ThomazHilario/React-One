@@ -5,11 +5,11 @@ import TotalCarrinho from "./TotalCarrinho";
 import Titulo from "@/components/Titulo";
 
 // Context
-import { UseMyContext } from "../../context";
+import { UseCarrinhoContext } from "../../hooks/useCarrinhoContext";
 
 const CarrinhoSuspenso = () => {
 
-  const { carrinho, valorTotal } = UseMyContext()
+  const { carrinho, valorTotal } = UseCarrinhoContext()
 
   return (
     <div

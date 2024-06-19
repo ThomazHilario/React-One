@@ -4,12 +4,13 @@ import Quantidade from "@/components/Quantidade";
 import ValorFormatado from "@/components/ValorFormatado";
 import InfoItemCarrinho from "./InfoItemCarrinho";
 
-const ItemCarrinho = ({
-  itemCarrinho,
-  removerProdutoCarrinho,
-  adicionarProduto,
-  removerProduto,
-}) => {
+// Context
+import { UseMyContext } from "../../context";
+
+const ItemCarrinho = ({itemCarrinho}) => {
+
+  const {adicionarProduto, removerProduto, removerProdutoCarrinho} = UseMyContext()
+
   return (
     <li key={itemCarrinho.id}>
       <>

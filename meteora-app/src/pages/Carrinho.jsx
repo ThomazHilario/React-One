@@ -5,14 +5,20 @@ import Sumario from "@/components/Sumario";
 import ListaProdutosCarrinho from "@/components/ListaProdutosCarrinho";
 import BannerCarrinho from "@/components/BannerCarrinho";
 
-const Carrinho = ({
-  carrinho,
-  adicionarProduto,
-  removerProduto,
-  removerProdutoCarrinho,
-  valorTotalCarrinho,
-  quantidadeProdutos,
-}) => {
+// Context
+import { UseMyContext } from "../context";
+
+const Carrinho = () => {
+
+  const {
+    carrinho, 
+    adicionarProduto, 
+    removerProduto, 
+    removerProdutoCarrinho,
+    valorTotal,
+    quantidade
+  } = UseMyContext()
+
   return (
     <>
       <BarraNavegacao />
@@ -35,8 +41,8 @@ const Carrinho = ({
               />
             </div>
             <Sumario
-              valorTotalCarrinho={valorTotalCarrinho}
-              quantidadeProdutos={quantidadeProdutos}
+              valorTotalCarrinho={valorTotal}
+              quantidadeProdutos={quantidade}
             />
           </div>
         </section>
