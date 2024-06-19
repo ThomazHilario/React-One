@@ -55,11 +55,17 @@ export const UseCarrinhoContext = () => {
       
     }
 
+    // removerProdutoCarrinho
+    function removerProdutoCarrinho(idProduto){
+      setCarrinho(carrinho.filter((itemCart) => itemCart.id !== idProduto && itemCart))
+    }
+
     return{
         carrinho,
         setCarrinho,
         adicionarProduto,
-        removerProduto
+        removerProduto,
+        removerProdutoCarrinho
     }
       
 }
