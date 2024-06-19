@@ -4,26 +4,11 @@ import produtos from "@/mocks/produtos.json";
 import Titulo from "@/components/Titulo";
 
 // Context
-import { UseMyContext } from "../../context";
+import { UseCarrinhoContext } from "../../hooks/useCarrinhoContext";
 
 const Produtos = () => {
 
-  // States from context
-  const {carrinho, setCarrinho} = UseMyContext()
-
-  function adicionarProduto(novoProduto) {
-    const temOProduto = carrinho.some((itemDoCarrinho) => itemDoCarrinho.id === novoProduto.id);
-    
-    if (!temOProduto) {
-      novoProduto.quantidade = 1;
-      return setCarrinho((carrinhoAnterior) => [
-        ...carrinhoAnterior,
-        novoProduto,
-      ]);
-    }
-
-    setCarrinho(carrinho.map(itemcart => itemcart.id === novoProduto.id && itemcart.quantidade + 1));
-  }
+  const { adicionarProduto } = UseCarrinhoContext()
 
   return (
     <section role="produtos" aria-label="Produtos que estão bombando!">
