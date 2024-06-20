@@ -1,39 +1,36 @@
-import { useEffect, useMemo } from 'react';
+// Context
 import { UseMyContext } from '../context'
 
+// Reducers
+import { ADD_PRODUTO, REMOVE_PRODUTO, UPDATE_QUANTIDADE } from '../reducers/carrinhoRedurcers';
+
+const addProdutoAction = (novoProduto) => {
+  return{
+    type: ADD_PRODUTO,
+    payload: novoProduto
+  }
+}
+
+const removeProdutoAction = (produtoId) => {
+  return{
+    type: REMOVE_PRODUTO,
+    payload: produtoId
+  }
+}
+
+const updateQuantidadeProdutoAction = (produtoId, quantidade) => {
+  return{
+    type: UPDATE_QUANTIDADE,
+    payload: {produtoId, quantidade}
+  }
+}
+
 export const UseCarrinhoContext = () => {
-    const { 
-      carrinho, 
-      setCarrinho, 
-      quantidade, 
-      setQuantidade, 
-      valorTotal, 
-      setValorTotal 
-    } = UseMyContext()
+    const { carrinho, dispatch, quantidade, valorTotal } = UseMyContext()
 
     // Adicionar produto
     function adicionarProduto(novoProduto) {
-        const temOProduto = carrinho.some((itemDoCarrinho) => itemDoCarrinho.id === novoProduto.id);
-        
-        if (!temOProduto) {
-          novoProduto.quantidade = 1;
-          setCarrinho((carrinhoAnterior) => [
-            ...carrinhoAnterior,
-            novoProduto,
-          ]);
-          return
-        }
-
-        setCarrinho(carrinho.map(itemcart => {
-          // Incrementando a quantidade caso o produto esteja no carrinho
-          if(itemcart.id === novoProduto.id){
-            itemcart.quantidade += 1
-            return itemcart
-          } 
-          
-          // retornando o produto do carrinho caso o id seja diferente
-          return itemcart
-        }))
+        dispatch(addProdutoAction(novoProduto))
     }
 
     // removerProduto
@@ -45,55 +42,21 @@ export const UseCarrinhoContext = () => {
       if(produto.quantidade === 1){
 
         // Removendo o produto do carrinho
-        setCarrinho(carrinho.filter(produtoCart => produtoCart.id !== produto.id ))
+        dispatch(removeProdutoAction(idProduto))
         return
       }
 
       // Caso o produto tenha a quantidade superior a 1, diminuimos a quantidade em 1
-      setCarrinho(carrinho.map(itemCart => {
-        if(itemCart.id === produto.id){
-          itemCart.quantidade -= 1
-          return itemCart
-        }
-
-        return itemCart
-      }))
+      dispatch(updateQuantidadeProdutoAction(idProduto, produto.quantidade - 1))
     }
-
-    // calculandoValorTotal
-    function calculandoOValorTotal(){
-      // Percorrendo o array de produtos
-      const precosDosProdutos = carrinho.map(itemCart => {
-        return itemCart.preco * itemCart.quantidade
-      })
-
-      // Caso tenha somente um produto no carrinho
-      if(carrinho.length === 1){
-        setValorTotal(precosDosProdutos)
-        return
-      }
-
-      // Caso tenha mais de dois produtos na state carrinho
-      setValorTotal(carrinho.length > 0 ? precosDosProdutos.reduce((acc,item) => item += acc) : 0)
-    }
-
-    // Usando o useMemo para calcular o valor da compra e guardar em cache.(Evita o componente renderizar.)
-    useMemo(() => {
-      // Calculando o valor da compra
-      calculandoOValorTotal()
-
-      // Calculando a quantidade de itens no carrinho
-      setQuantidade(carrinho.length)
-    },[carrinho])
 
     // removerProdutoCarrinho
     function removerProdutoCarrinho(idProduto){
-      setCarrinho(carrinho.filter((itemCart) => itemCart.id !== idProduto && itemCart))
+      dispatch(removeProdutoAction(idProduto))
     }
 
     return{
         carrinho,
-        setCarrinho,
         adicionarProduto,
         removerProduto,
         removerProdutoCarrinho,

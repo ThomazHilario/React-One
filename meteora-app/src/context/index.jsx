@@ -1,13 +1,18 @@
-import { useState, createContext, useContext } from 'react'
+import { useState, createContext, useContext, useReducer, useMemo } from 'react'
+
+// Reducer
+import { carrinhoReducer } from '../reducers/carrinhoRedurcers'
 
 // Contexto
 const Context = createContext(null)
+
+const initialStateCarrinho = []
 
 // ContextProvider
 export const ContextProvider = ({children}) => {
 
     // Carrinho - state
-    const [carrinho, setCarrinho] = useState([])
+    const [carrinho, dispatch] = useReducer(carrinhoReducer, initialStateCarrinho)
 
     // Quantidade de produtos - state
     const [quantidade, setQuantidade] = useState(0);
@@ -15,8 +20,34 @@ export const ContextProvider = ({children}) => {
     // Valor total do carrinho - state
     const [valorTotal, setValorTotal] = useState(0);
 
+    // calculandoValorTotal
+    function calculandoOValorTotal(){
+        // Percorrendo o array de produtos
+        const precosDosProdutos = carrinho.map(itemCart => {
+          return itemCart.preco * itemCart.quantidade
+        })
+  
+        // Caso tenha somente um produto no carrinho
+        if(carrinho.length === 1){
+          setValorTotal(precosDosProdutos)
+          return
+        }
+  
+        // Caso tenha mais de dois produtos na state carrinho
+        setValorTotal(carrinho.length > 0 ? precosDosProdutos.reduce((acc,item) => item += acc) : 0)
+      }
+  
+      // Usando o useMemo para calcular o valor da compra e guardar em cache.(Evita o componente renderizar.)
+      useMemo(() => {
+        // Calculando o valor da compra
+        calculandoOValorTotal()
+  
+        // Calculando a quantidade de itens no carrinho
+        setQuantidade(carrinho.length)
+      },[carrinho])
+
     return(
-        <Context.Provider value={{carrinho, setCarrinho, quantidade, setQuantidade, valorTotal, setValorTotal}}>
+        <Context.Provider value={{carrinho, dispatch, quantidade, setQuantidade, valorTotal, setValorTotal}}>
             {children}
         </Context.Provider>
     )
