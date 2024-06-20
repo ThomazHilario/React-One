@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { UseMyContext } from '../context'
 
 export const UseCarrinhoContext = () => {
@@ -60,25 +60,29 @@ export const UseCarrinhoContext = () => {
       }))
     }
 
-    useEffect(() => {
-      // calculandoValorTotal
-      function calculandoOValorTotal(){
-        // Percorrendo o array de produtos
-        const precosDosProdutos = carrinho.map(itemCart => {
-          return itemCart.preco * itemCart.quantidade
-        })
+    // calculandoValorTotal
+    function calculandoOValorTotal(){
+      // Percorrendo o array de produtos
+      const precosDosProdutos = carrinho.map(itemCart => {
+        return itemCart.preco * itemCart.quantidade
+      })
 
-        // Caso tenha somente um produto no carrinho
-        if(carrinho.length === 1){
-          setValorTotal(precosDosProdutos)
-          return
-        }
-
-        // Caso tenha mais de dois produtos na state carrinho
-        setValorTotal(carrinho.length > 0 ? precosDosProdutos.reduce((acc,item) => item += acc) : 0)
+      // Caso tenha somente um produto no carrinho
+      if(carrinho.length === 1){
+        setValorTotal(precosDosProdutos)
+        return
       }
 
+      // Caso tenha mais de dois produtos na state carrinho
+      setValorTotal(carrinho.length > 0 ? precosDosProdutos.reduce((acc,item) => item += acc) : 0)
+    }
+
+    // Usando o useMemo para calcular o valor da compra e guardar em cache.(Evita o componente renderizar.)
+    useMemo(() => {
+      // Calculando o valor da compra
       calculandoOValorTotal()
+
+      // Calculando a quantidade de itens no carrinho
       setQuantidade(carrinho.length)
     },[carrinho])
 
