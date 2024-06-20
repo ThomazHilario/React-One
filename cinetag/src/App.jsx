@@ -1,4 +1,4 @@
-import { RoutesPage } from "./Routes/routes"
+import { RoutesPage } from "@/Routes/routes"
 
 function App() {
   return <RoutesPage/>
