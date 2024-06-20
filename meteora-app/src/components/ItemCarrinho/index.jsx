@@ -5,11 +5,11 @@ import ValorFormatado from "@/components/ValorFormatado";
 import InfoItemCarrinho from "./InfoItemCarrinho";
 
 // Context
-import { UseMyContext } from "../../context";
+import { UseCarrinhoContext } from '../../hooks/useCarrinhoContext'
 
 const ItemCarrinho = ({itemCarrinho}) => {
 
-  const {adicionarProduto, removerProduto, removerProdutoCarrinho} = UseMyContext()
+  const {adicionarProduto, removerProduto, removerProdutoCarrinho} = UseCarrinhoContext()
 
   return (
     <li key={itemCarrinho.id}>
