@@ -4,7 +4,7 @@ import './card.css'
 // react-icons
 import { FaHeart, FaRegHeart  } from "react-icons/fa";
 
-export const Card = ({imageUrl, titulo, isFavorite}) => {
+export const Card = ({id, imageUrl, titulo, isFavorite, handleClick}) => {
 
     // Propriedades dos icons
     const propsIcon = {
@@ -23,7 +23,12 @@ export const Card = ({imageUrl, titulo, isFavorite}) => {
                 <h2>{titulo}</h2>
 
                 {/* Icone de favoritar o post */}
-                {isFavorite ? <FaHeart {...propsIcon} /> :<FaRegHeart {...propsIcon} /> }
+                {isFavorite ? (
+                    <FaHeart {...propsIcon} onClick={() => handleClick(id)}/>
+                    ) : (
+                        <FaRegHeart {...propsIcon} onClick={() => handleClick(id)}/>
+                    )
+                }
             </div>
         </div>
     )

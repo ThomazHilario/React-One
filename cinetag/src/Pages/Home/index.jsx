@@ -18,10 +18,11 @@ import './home.css'
 
 export const Home = () => {
 
-    const [post, setPost] = useState(posts.map((item) => {
-        item.isFavorite = false
-        return item
-    }))
+    const [post, setPost] = useState(posts)
+
+    function setStatusInIsFavorite(id){
+        setPost(post.map(postItem => postItem.id === id ? {...postItem, isFavorite:!postItem.isFavorite} : postItem))
+    }
 
 
     return(
@@ -33,10 +34,12 @@ export const Home = () => {
             <div className='container__cards'>
                 {post.map(postItem => (
                     <Card 
-                        key={postItem.id} 
+                        key={postItem.id}
+                        id={postItem.id} 
                         imageUrl={postItem.capa}
                         titulo={postItem.titulo} 
                         isFavorite={postItem.isFavorite}
+                        handleClick={setStatusInIsFavorite}
                     />
                 ))}
             </div>
