@@ -1,6 +1,9 @@
 // React
 import { useState } from 'react'
 
+// Context
+import UseMyContext from '@/Context/context.jsx'
+
 // Components
 import { ContainerPage } from '../../Components/ContainerPage'
 import { Banner } from '@/Components/Banner'
@@ -10,20 +13,12 @@ import { Card } from '@/Components/Card'
 // img Banner
 import banner_principal from '@/assets/imagens/banner_principal.svg'
 
-// import posts
-import posts from '@/Mocks/db.json'
-
 // import css
 import './home.css'
 
 export const Home = () => {
 
-    const [post, setPost] = useState(posts)
-
-    function setStatusInIsFavorite(id){
-        setPost(post.map(postItem => postItem.id === id ? {...postItem, isFavorite:!postItem.isFavorite} : postItem))
-    }
-
+    const {post, setStatusInIsFavorite} = UseMyContext()
 
     return(
         <ContainerPage >
