@@ -26,7 +26,11 @@ export const Favorites = () => {
             <Banner imageUrl={banner}/>
 
             {/* Titulo */}
-            <Title texto="Meus Favoritos"/>
+            {favoritesPosts.length > 0 ? (
+                <Title texto="Meus Favoritos"/>
+            ) : (
+                <Title texto="Você não tem nenhum filme favorito!!"/>
+            )}
 
             <section className='secao_favoritos'>
                 {favoritesPosts.map((postItem) => (
