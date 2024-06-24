@@ -18,7 +18,7 @@ import './home.css'
 
 export const Home = () => {
 
-    const {post, setStatusInIsFavorite} = UseMyContext()
+    const {post} = UseMyContext()
 
     return(
         <ContainerPage >
@@ -34,7 +34,6 @@ export const Home = () => {
                         imageUrl={postItem.capa}
                         titulo={postItem.titulo} 
                         isFavorite={postItem.isFavorite}
-                        handleClick={setStatusInIsFavorite}
                     />
                 ))}
             </div>

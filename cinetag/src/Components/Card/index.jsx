@@ -1,10 +1,15 @@
+// Context
+import UseMyContext from '@/Context/context.jsx'
+
 // import css
 import './card.css'
 
 // react-icons
 import { FaHeart, FaRegHeart  } from "react-icons/fa";
 
-export const Card = ({id, imageUrl, titulo, isFavorite, handleClick}) => {
+export const Card = ({id, imageUrl, titulo, isFavorite}) => {
+
+    const { setStatusInIsFavorite } = UseMyContext()
 
     // Propriedades dos icons
     const propsIcon = {
@@ -24,9 +29,9 @@ export const Card = ({id, imageUrl, titulo, isFavorite, handleClick}) => {
 
                 {/* Icone de favoritar o post */}
                 {isFavorite ? (
-                    <FaHeart {...propsIcon} onClick={() => handleClick(id)}/>
+                    <FaHeart {...propsIcon} onClick={() => setStatusInIsFavorite(id)}/>
                     ) : (
-                        <FaRegHeart {...propsIcon} onClick={() => handleClick(id)}/>
+                        <FaRegHeart {...propsIcon} onClick={() => setStatusInIsFavorite(id)}/>
                     )
                 }
             </div>

@@ -15,7 +15,7 @@ import './favorites.css'
 
 export const Favorites = () => {
 
-    const {post, setStatusInIsFavorite} = UseMyContext()
+    const {post} = UseMyContext()
 
     // favoritesPosts
     const favoritesPosts = post.filter(postItem => postItem.isFavorite === true)
@@ -39,9 +39,7 @@ export const Favorites = () => {
                         id={postItem.id}
                         imageUrl={postItem.capa}
                         titulo={postItem.titulo}
-                        isFavorite={postItem.isFavorite}
-                        handleClick={setStatusInIsFavorite}
-                    />
+                        isFavorite={postItem.isFavorite}                    />
                 ))}
             </section>
         </ContainerPage>
