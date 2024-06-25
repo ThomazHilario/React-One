@@ -28,7 +28,7 @@ export const Card = ({id, imageUrl, titulo, isFavorite}) => {
 
                 <div>
                     {/* Titulo do post */}
-                    <Link to={`player/${id}`}>{titulo}</Link>
+                    <Link to={`/player/${id}`}>{titulo}</Link>
 
                     {/* Icone de favoritar o post */}
                     {isFavorite ? (
