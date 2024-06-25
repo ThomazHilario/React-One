@@ -1,0 +1,22 @@
+.container__notfound{
+    height: calc(100vh - 140px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.container__notfound h1{
+    font-size: 4rem;
+}
+
+.container__notfound h2{
+    font-size: 2rem;
+}
+
+.container__notfound a{
+    text-decoration: none;
+    color: black;
+    border-bottom: 2px solid rgb(80, 80, 193);
+}

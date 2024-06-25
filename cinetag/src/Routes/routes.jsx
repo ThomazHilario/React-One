@@ -5,6 +5,7 @@ import { Header } from '@/Components/Header'
 import { Home } from '@/Pages/Home'
 import { Favorites } from '../Pages/Favorites'
 import { Player } from '../Pages/Player'
+import { NotFound } from '../Pages/NotFound'
 import { Footer } from '@/Components/Footer'
 
 export const RoutesPage = () => {
@@ -16,6 +17,7 @@ export const RoutesPage = () => {
                 <Route path='/' element={<Home/>}/>
                 <Route path='/favoritos' element={<Favorites/>}/>
                 <Route path='/player/:id' element={<Player/>}/>
+                <Route path='*' element={<NotFound/>}/>
             </Routes>
 
             <Footer/>
