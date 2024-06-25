@@ -1,3 +1,6 @@
+// React router dom
+import { Link } from 'react-router-dom'
+
 // Context
 import UseMyContext from '@/Context/context.jsx'
 
@@ -19,22 +22,22 @@ export const Card = ({id, imageUrl, titulo, isFavorite}) => {
     }
 
     return(
-        <div className="card">
-            {/* Imagem do post */}
-            <img src={imageUrl} alt='Foto do post'/>
+            <div className="card">
+                {/* Imagem do post */}
+                <img src={imageUrl} alt='Foto do post'/>
 
-            <div>
-                {/* Titulo do post */}
-                <h2>{titulo}</h2>
+                <div>
+                    {/* Titulo do post */}
+                    <Link to={`player/${id}`}>{titulo}</Link>
 
-                {/* Icone de favoritar o post */}
-                {isFavorite ? (
-                    <FaHeart {...propsIcon} onClick={() => setStatusInIsFavorite(id)}/>
-                    ) : (
-                        <FaRegHeart {...propsIcon} onClick={() => setStatusInIsFavorite(id)}/>
-                    )
-                }
+                    {/* Icone de favoritar o post */}
+                    {isFavorite ? (
+                        <FaHeart {...propsIcon} onClick={() => setStatusInIsFavorite(id)}/>
+                        ) : (
+                            <FaRegHeart {...propsIcon} onClick={() => setStatusInIsFavorite(id)}/>
+                        )
+                    }
+                </div>
             </div>
-        </div>
     )
 }

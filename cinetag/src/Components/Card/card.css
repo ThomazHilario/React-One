@@ -26,7 +26,14 @@
 }
 
 /* titulo do card */
-.card > div > h2{
+.card > div > a{
+    text-decoration: none;
+    color: black;
     font-size: 1.2rem;
     font-weight: 600;
+    transition: 0.8s;
+}
+
+.card > div > a:hover{
+    color: rgb(68, 68, 202);
 }

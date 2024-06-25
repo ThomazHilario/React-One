@@ -12,9 +12,9 @@ export const PostProviderContext = ({children}) => {
     // state - post
     const [post, setPost] = useState(posts)
 
-    const setStatusInIsFavorite = useCallback((id) =>{
+    const setStatusInIsFavorite = useCallback((id) => {
         setPost(post.map(postItem => postItem.id === id ? {...postItem, isFavorite:!postItem.isFavorite} : postItem))
-    },[])
+    },[post])
 
     return(
         <PostContext.Provider value={{post, setPost, setStatusInIsFavorite}}>
