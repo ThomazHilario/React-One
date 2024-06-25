@@ -1,8 +1,5 @@
 import { createContext, useContext, useState, useCallback } from 'react'
 
-// import posts
-import posts from '@/Mocks/db.json'
-
 // Context
 const PostContext = createContext(null)
 
@@ -10,7 +7,7 @@ const PostContext = createContext(null)
 export const PostProviderContext = ({children}) => {
 
     // state - post
-    const [post, setPost] = useState(posts)
+    const [post, setPost] = useState([])
 
     const setStatusInIsFavorite = useCallback((id) => {
         setPost(post.map(postItem => postItem.id === id ? {...postItem, isFavorite:!postItem.isFavorite} : postItem))

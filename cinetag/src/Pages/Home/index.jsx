@@ -1,5 +1,5 @@
 // React
-import { useState } from 'react'
+import { useEffect } from 'react'
 
 // Context
 import UseMyContext from '@/Context/context.jsx'
@@ -18,7 +18,26 @@ import './home.css'
 
 export const Home = () => {
 
-    const {post} = UseMyContext()
+    const {post, setPost} = UseMyContext()
+
+    useEffect(() => {
+        async function loadPosts(){
+            try {
+                // Fazendo requisição
+                const response = await fetch('https://my-json-server.typicode.com/monicahillman/cinetag-api/videos')
+
+                // Transformando os dados em javascript
+                const data = await response.json()
+
+                // colocando dentro do array de post
+                setPost(data)
+            } catch (e) {
+                console.log(e)
+            }
+        }
+
+        loadPosts()
+    },[])
 
     return(
         <ContainerPage >
